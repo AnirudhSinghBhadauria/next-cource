@@ -1,9 +1,14 @@
-import { Fragment } from "react";
-import Link from 'next/link'
+import EventList from "@/components/Event/EventList";
+import { getFeaturedEvents } from "@/Dummy-Data";
 
-const Domain = () => {
-  
-  return <h1>Active Events</h1>
+const HomePage = () => {
+  const featruedEvents = getFeaturedEvents();
+
+  return (
+    <div>
+      <EventList items={featruedEvents} />
+    </div>
+  );
 };
 
-export default Domain;
+export default HomePage;
