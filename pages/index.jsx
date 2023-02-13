@@ -3,9 +3,7 @@ import Link from 'next/link'
 
 const Domain = () => {
   
-  return <Fragment>
-    <Link href='/Tourist'>tourist</Link>
-  </Fragment>;
+  return <h1>Active Events</h1>
 };
 
 export default Domain;
