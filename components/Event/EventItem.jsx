@@ -28,7 +28,7 @@ const EventItem = (props) => {
           </div>
         </div>
         <div className={classes.actions}>
-          <Button href={exploreLink}>Explore Events</Button>
+          <Button link href={exploreLink}>Explore Events</Button>
         </div>
       </div>
     </li>
