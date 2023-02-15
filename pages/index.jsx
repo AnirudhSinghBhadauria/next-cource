@@ -5,12 +5,10 @@ import Link from 'next/link'
 
 const HomePage = (props) => {
   const {loadedProducts} = props;
-  console.log(loadedProducts);
-
   return (
     <ul>
       {loadedProducts.map(({ id, title }) => {
-        return <Link href={`/${id}`} key={id}>{title}</Link>;
+        return <Link href={`/product/${id}`} key={id}>{title}</Link>;
       })}
     </ul>
   );
