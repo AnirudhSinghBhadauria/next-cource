@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import { getAllEvents, getEventById, getFeaturedEvents } from "@/api-util";
+import { getAllEvents, getEventById  } from "@/api-util";
+import HeadContent from "@/components/Head/HeadContent";
 
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
@@ -12,6 +13,11 @@ function EventDetailPage(props) {
   if (!event) {
     return (
       <ErrorAlert>
+        <HeadContent
+          name="error"
+          content="No Event Found!"
+          title="NEXT | No Event Found"
+        />
         <p>No event found!</p>
       </ErrorAlert>
     );
@@ -19,6 +25,11 @@ function EventDetailPage(props) {
 
   return (
     <Fragment>
+      <HeadContent
+        title={`NEXT | ${props.eventId.toUpperCase()}`}
+        name="specific Event"
+        content="content about specific event"
+      />
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
@@ -42,6 +53,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       event: event[0],
+      eventId: eventId,
     },
     revalidate: 30,
   };
@@ -56,6 +68,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 }

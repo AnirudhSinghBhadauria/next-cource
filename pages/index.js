@@ -1,9 +1,15 @@
 import EventList from "../components/events/event-list";
 import { getFeaturedEvents } from "@/api-util";
+import HeadContent from "@/components/Head/HeadContent";
 
 function HomePage(props) {
   return (
     <div>
+      <HeadContent
+        title="NEXT | 2023"
+        name='description'
+        content="Evnets available on the internet."
+      />
       <EventList items={props.events} />
     </div>
   );
@@ -18,6 +24,6 @@ export async function getStaticProps() {
     props: {
       events: featuredEvents,
     },
-    revalidate: 1800
+    revalidate: 1800,
   };
 }
