@@ -14,8 +14,12 @@ function HomePage(props) {
       message: "testing succesfull!",
     });
     changeNStatus(true);
+
+    setTimeout(() => {
+      changeNStatus(false);
+    }, 3000);
   };
-  
+
   console.log(nStatus);
 
   return (

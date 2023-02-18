@@ -1,5 +1,5 @@
 export const INITIAL_STATE = {
-  notification: { title: "", status: '', message: "" },
+  notification: { title: "", status: "", message: "" },
   nStatus: false,
 };
 
@@ -7,13 +7,13 @@ export const notificationReducer = (state, action) => {
   switch (action.type) {
     case "NOTIFICATION":
       return {
-        notification: action.payload,
         ...state,
+        notification: action.payload,
       };
     case "N-STATUS":
       return {
-        nStatus: action.payload,
         ...state,
+        nStatus: action.payload,
       };
     default:
       return state;
